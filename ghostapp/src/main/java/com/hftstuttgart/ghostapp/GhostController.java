@@ -30,13 +30,21 @@ public class GhostController {
         return ghosts.values().stream().toList();
     }
 
-  /*  @PutMapping("/ghost")
+
+
+    @GetMapping("/ghost")
+    @ResponseStatus(HttpStatus.OK)
+    public Ghost getGhost(@RequestParam String name){
+        return ghosts.get(name);
+    }
+
+    @PutMapping("/ghost")
     public Ghost setGhostName(@RequestBody Ghost ghost){
         Ghost oldghost = ghosts.get(ghost.getName());
         ghosts.put(ghost.getName(),ghost);
         return ghost;
     }
-    */
+
 
     @PutMapping("/setThreadLevel")
     public Ghost setThreadLevel(@RequestParam String name, @RequestParam ThreadLevel threadLevel){

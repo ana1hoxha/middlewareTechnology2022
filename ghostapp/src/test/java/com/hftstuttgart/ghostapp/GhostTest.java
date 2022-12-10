@@ -1,6 +1,7 @@
 package com.hftstuttgart.ghostapp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
@@ -45,8 +46,8 @@ public class GhostTest {
         String requestObject = objectMapper.writeValueAsString(new Ghost("Bob",GhostType.JIN, ThreadLevel.HIGH));
         mockMvc.perform(MockMvcRequestBuilders.post("/spooky/ghost").content(requestObject).contentType(MediaType.APPLICATION_JSON)).andReturn().getResponse();
         MockHttpServletResponse response= mockMvc.perform(MockMvcRequestBuilders.get("/spooky/ghost?name=Bob")).andReturn().getResponse();
-         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-         assertThat(response.getContentAsString()).isEqualTo(requestObject);
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo(requestObject);
     }
 
     @Test
@@ -57,7 +58,7 @@ public class GhostTest {
         mockMvc.perform(MockMvcRequestBuilders.post("/spooky/ghost").content(requestObject).contentType(MediaType.APPLICATION_JSON));
         mockMvc.perform(MockMvcRequestBuilders.put("/spooky/ghost").content(requestObject2).contentType(MediaType.APPLICATION_JSON));
 
-        MockHttpServletResponse response = mockMvc.perform(MockMvcRequestBuilders.delete("/spooky/ghost?name=bob")).andReturn().getResponse();
+        MockHttpServletResponse response = mockMvc.perform(MockMvcRequestBuilders.delete("/spooky/ghost?name=Bob")).andReturn().getResponse();
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
         assertThat(response.getContentAsString()).isEqualTo(requestObject);
 
@@ -67,7 +68,7 @@ public class GhostTest {
     @Test
     public void createAndChangeGhost() throws Exception {
         String requestObject = objectMapper.writeValueAsString(new Ghost("Bob", GhostType.JIN, ThreadLevel.HIGH));
-        String requestObject2 = objectMapper.writeValueAsString(new Ghost("bob", GhostType.JIN, ThreadLevel.HIGH));
+        String requestObject2 = objectMapper.writeValueAsString(new Ghost("Bob", GhostType.JIN, ThreadLevel.HIGH));
         mockMvc.perform(MockMvcRequestBuilders.post("/spooky/ghost").content(requestObject).contentType(MediaType.APPLICATION_JSON));
         MockHttpServletResponse response = mockMvc.perform(MockMvcRequestBuilders.put("/spooky/ghost").content(requestObject2).contentType(MediaType.APPLICATION_JSON)).andReturn().getResponse();
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
