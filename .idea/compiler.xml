@@ -8,15 +8,18 @@
         <outputRelativeToContentRoot value="true" />
         <module name="hft-todo" />
         <module name="hft-stuttgart" />
+        <module name="ghostapp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ghostapp" target="17" />
       <module name="hft-stuttgart" target="17" />
       <module name="hft-todo" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ghostapp" options="-parameters" />
       <module name="hft-stuttgart" options="-parameters" />
       <module name="hft-todo" options="-parameters" />
     </option>
