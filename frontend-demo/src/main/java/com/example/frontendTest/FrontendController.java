@@ -18,7 +18,6 @@ public class FrontendController {
     @Value("${backend.endpoint}")
     private String todoApiEndpoint;
 
-
     private String displayPage(Model model) {
         TodoItem[] items = WebClient
                 .create(todoApiEndpoint)
@@ -66,4 +65,7 @@ public class FrontendController {
     }
 
 
+    public String getTodoApiEndpoint() {
+        return todoApiEndpoint;
+    }
 }
