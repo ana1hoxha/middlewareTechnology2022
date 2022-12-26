@@ -48,10 +48,9 @@ public class FrontendController {
                 .bodyToMono(TodoItem.class)
                 .block();
 
-        return "redirect:/"; 
+        return "redirect:/";
 
     }
-
 
 
     @PostMapping("/delete")

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/frontendTest/frontendDemo.iml" filepath="$PROJECT_DIR$/frontendTest/frontendDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend-demo/backend-demo.iml" filepath="$PROJECT_DIR$/backend-demo/backend-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontendDemo/frontend-demo.iml" filepath="$PROJECT_DIR$/frontendDemo/frontend-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/ghostapp/ghostapp.iml" filepath="$PROJECT_DIR$/ghostapp/ghostapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/hft-stuttgart/hft-stuttgart.iml" filepath="$PROJECT_DIR$/hft-stuttgart/hft-stuttgart.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hft-todo/hft-todo.iml" filepath="$PROJECT_DIR$/hft-todo/hft-todo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hft-todo/hft-todo-version1.iml" filepath="$PROJECT_DIR$/hft-todo/hft-todo-version1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/middlewareTechnology2022.iml" filepath="$PROJECT_DIR$/.idea/middlewareTechnology2022.iml" />
     </modules>
   </component>
